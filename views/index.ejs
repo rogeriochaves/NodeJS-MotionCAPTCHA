@@ -1,0 +1,15 @@
+<h1>MotionCAPTCHA</h1>
+<p>Draw the shape below to continue</p>
+
+<form action="send" id="captcha" method="POST">
+	<div id="mc">
+	    <canvas id="mc-canvas" class="<%= error ? 'mc-invalid' : '' %>"></canvas>
+	</div>
+	<input type="submit" value="Submit" disabled="disabled" />
+</form>
+
+<script type="text/javascript">
+	(function() {
+		$('#captcha').motionCaptcha('<%= shape %>');
+	})();
+</script>
